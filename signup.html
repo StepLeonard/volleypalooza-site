@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Join the Party — VOLLEYPALOOZA</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bungee:wght@400&family=Bebas+Neue:wght@400..700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+
+<section id="signup-page" class="section">
+  <div class="container">
+    <h2>Join the Party</h2>
+    <p class="lead">
+      Sign up below to be part of a fun-filled day at VOLLEYPALOOZA.
+    </p>
+
+    <div class="signup-card">
+      <form id="signupForm" class="signup-form">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input id="fullName" name="fullName" type="text" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input id="phone" name="phone" type="tel" required>
+        </div>
+
+        <div class="form-group">
+          <span class="radio-title">Signing Up As</span>
+
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="signupType" value="Individual" required>
+              <span>Individual</span>
+            </label>
+
+            <label class="radio-option">
+              <input type="radio" name="signupType" value="Team" required>
+              <span>Team</span>
+            </label>
+
+            <label class="radio-option">
+              <input type="radio" name="signupType" value="Sponsor" required>
+              <span>Sponsor</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="signup-actions">
+          <button type="submit" class="cta">Submit</button>
+          <a href="index.html" class="back-link">← Back to Home</a>
+        </div>
+      </form>
+
+      <div id="successMessage" class="success-message" hidden>
+        <h2>Hi, Thank You for signing up!</h2>
+        <p class="lead">
+          We are excited for you to join us in a fun-filled day at VOLLEYPALOOZA!
+        </p>
+        <a href="index.html" class="cta">Back to Home</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="scripts/signup.js"></script>
+</body>
+</html>

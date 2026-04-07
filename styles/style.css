@@ -1,0 +1,679 @@
+:root{
+  --red:#e02127;
+  --gold:#ffd500;
+  --green:#0fa64b;
+  --ink:#0b0b0b;
+  --paper:#fffdf5;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+  --container:1200px;
+}
+
+/* RESET + BASE */
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  -webkit-text-size-adjust:100%;
+  text-rendering:optimizeLegibility;
+  min-width:320px;
+}
+img{max-width:100%;height:auto;vertical-align:middle}
+a{color:inherit;text-decoration:none}
+
+.container{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:0 clamp(14px,4vw,24px);
+}
+
+.section{
+  padding:clamp(52px,8vw,108px) 0;
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+h2{
+  font-family:"Bebas Neue",sans-serif;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  font-size:clamp(28px,6.5vw,64px);
+  margin:0 0 12px;
+}
+
+.lead{
+  max-width:780px;
+  margin:0 auto 28px;
+  line-height:1.6;
+}
+
+/* ================= HERO ================= */
+#hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
+  color:#fff;
+  background:linear-gradient(135deg,var(--red) 0%,var(--gold) 45%,var(--green) 100%);
+  padding-inline:clamp(24px,10vw,160px);
+}
+
+#hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.38),rgba(0,0,0,.58)),
+    url("https://i.postimg.cc/Y28Dcmfb/reggae-volley-ball.png") center/cover no-repeat;
+  mix-blend-mode:multiply;
+  opacity:.9;
+  z-index:0;
+}
+
+.hero-inner{
+  position:relative;
+  z-index:2;
+  max-width:1100px;
+  margin:0 auto;
+  padding:clamp(56px,8vw,110px) 0 clamp(44px,7vw,92px);
+}
+
+.logo{
+  width:min(140px,30vw);
+  margin:0 auto 16px;
+  display:block;
+  filter:drop-shadow(0 12px 28px rgba(0,0,0,.55));
+}
+
+.kicker{
+  font-family:"Bebas Neue",sans-serif;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-size:clamp(18px,3.2vw,34px);
+  margin-bottom:6px;
+}
+
+/* VOLLEYPALOOZA — soft steady reggae glow */
+.wordmark{
+  font-family:"Bungee",system-ui,sans-serif;
+  font-size:clamp(28px,9vw,88px);
+  line-height:1;
+  margin:0 auto clamp(12px,2vw,16px);
+  padding-inline:clamp(10px,4vw,40px);
+  white-space:nowrap;
+  overflow:visible;
+  letter-spacing:.02em;
+  background:linear-gradient(90deg,#b01616,#d4b200,#0a803a,#b01616);
+  background-size:220% 100%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  -webkit-text-stroke:clamp(1px,0.5vw,2px) rgba(255,255,255,.25);
+  text-shadow:
+    0 0 6px rgba(255,255,255,.25),
+    0 0 12px rgba(255,215,0,.25),
+    0 0 18px rgba(255,0,0,.25),
+    0 0 24px rgba(0,255,0,.2);
+  animation:flow 10s linear infinite;
+}
+
+@keyframes flow{
+  to{background-position:220% 0}
+}
+
+.meta{
+  font-weight:1000;
+  font-size:clamp(14px,3.2vw,24px);
+  text-shadow:0 2px 10px rgba(0,0,0,.6);
+}
+
+/* CTA — soft steady glow */
+.cta{
+  display:inline-block;
+  margin-top:16px;
+  padding:clamp(14px,3vw,18px) clamp(26px,6vw,34px);
+  border-radius:999px;
+  font-weight:1000;
+  letter-spacing:.06em;
+  font-size:clamp(16px,2.5vw,22px);
+  background:#0fa64b;
+  color:#ffd500;
+  border:none;
+  cursor:pointer;
+  box-shadow:
+    0 0 10px rgba(15,166,75,.45),
+    0 0 18px rgba(255,213,0,.35),
+    0 0 24px rgba(15,166,75,.35);
+  text-shadow:0 0 6px rgba(0,0,0,.45);
+  transition:transform .15s ease,filter .25s ease;
+}
+
+.cta:hover{
+  transform:scale(1.06);
+  filter:brightness(1.08);
+}
+
+/* Countdown */
+#count{
+  display:grid;
+  gap:clamp(10px,2.8vw,14px);
+  margin:clamp(22px,3.2vw,30px) auto 0;
+  max-width:min(560px,94vw);
+  grid-template-columns:repeat(4,1fr);
+}
+
+#count .box{
+  background:rgba(255,255,255,.16);
+  border:2px solid rgba(255,255,255,.35);
+  border-radius:16px;
+  backdrop-filter:blur(6px);
+  padding:clamp(8px,2.8vw,12px);
+}
+
+#count .num{
+  font-family:"Bebas Neue",sans-serif;
+  font-size:clamp(22px,7.2vw,40px);
+  letter-spacing:.08em;
+}
+
+#count .lbl{
+  font-size:clamp(10px,2.6vw,12px);
+  letter-spacing:.18em;
+}
+
+/* Rasta divider — thicker */
+.stripe{
+  height:14px;
+  background:linear-gradient(90deg,var(--red) 0 33%,var(--gold) 33% 66%,var(--green) 66% 100%);
+}
+
+/* SECTIONS */
+#about{
+  background:linear-gradient(180deg,#fff3a0,#ffdf4d);
+}
+
+#about .grid{
+  display:grid;
+  gap:clamp(16px,3.2vw,22px);
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+}
+
+#about .card{
+  background:#fff;
+  color:#111;
+  border:2px solid #111;
+  border-radius:24px;
+  padding:20px;
+  box-shadow:var(--shadow);
+  text-align:left;
+}
+
+#about .card b{
+  display:block;
+  margin-bottom:6px;
+}
+
+#about .icon{
+  font-size:32px;
+  margin-bottom:8px;
+}
+
+#fun{
+  background:linear-gradient(180deg,#0b6f39,#0fa64b);
+  color:#fff;
+}
+
+#fun .grid{
+  display:grid;
+  gap:clamp(16px,3.2vw,22px);
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+}
+
+#fun .card{
+  background:#111;
+  color:#fff;
+  border:2px solid var(--gold);
+  border-radius:24px;
+  padding:20px;
+  box-shadow:var(--shadow);
+}
+
+#fun .card b{
+  color:var(--gold);
+}
+
+#clubs{
+  background:linear-gradient(180deg,#9b1418,#e02127);
+  color:#fff;
+}
+
+#clubs .grid{
+  display:grid;
+  gap:clamp(16px,3.2vw,22px);
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+}
+
+.club{
+  background:#fff;
+  color:#111;
+  border:2px solid #111;
+  border-radius:24px;
+  padding:16px;
+  box-shadow:var(--shadow);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  font-weight:900;
+}
+
+.club img{
+  height:36px;
+  width:auto;
+}
+
+#map{
+  background:#0b0b0b;
+  color:#fff;
+}
+
+.mapwrap{
+  width:100%;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  border-radius:24px;
+  border:4px solid var(--gold);
+  box-shadow:var(--shadow);
+}
+
+iframe{
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+/* Footer */
+footer{
+  background:#000;
+  color:#fff;
+  text-align:center;
+  padding:26px 14px;
+  font-family:"Bebas Neue",sans-serif;
+  letter-spacing:.1em;
+}
+
+footer a{
+  color:var(--gold);
+  font-weight:900;
+}
+
+/* ================= SIGNUP PAGE ================= */
+#signup-page{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg,#fff3a0,#ffdf4d);
+}
+
+.signup-card{
+  background:#fff;
+  color:#111;
+  border:2px solid #111;
+  border-radius:24px;
+  padding:clamp(22px,4vw,34px);
+  box-shadow:var(--shadow);
+  max-width:760px;
+  margin:0 auto;
+}
+
+.signup-form{
+  text-align:left;
+}
+
+.form-group{
+  margin-bottom:22px;
+}
+
+.form-group label,
+.radio-title{
+  display:block;
+  font-weight:900;
+  margin-bottom:10px;
+  font-size:16px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"]{
+  width:100%;
+  padding:14px 16px;
+  border:2px solid #111;
+  border-radius:16px;
+  font-size:16px;
+  font-family:inherit;
+  background:#fffdf5;
+  transition:border-color .2s ease, box-shadow .2s ease, transform .15s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus{
+  outline:none;
+  border-color:var(--green);
+  box-shadow:0 0 0 4px rgba(15,166,75,.15);
+  transform:translateY(-1px);
+}
+
+.radio-group{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+
+.radio-option{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  background:#fffdf5;
+  border:2px solid #111;
+  border-radius:999px;
+  padding:10px 14px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.radio-option input{
+  accent-color:var(--green);
+}
+
+.signup-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  align-items:center;
+  justify-content:flex-start;
+  margin-top:10px;
+}
+
+.back-link{
+  font-weight:900;
+  text-decoration:underline;
+}
+
+.success-message{
+  text-align:center;
+  padding:10px 0;
+}
+
+.success-message .cta{
+  margin-top:10px;
+}
+
+/* Responsiveness */
+@media(max-width:700px){
+  #count{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:520px){
+  .signup-actions{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .signup-actions .cta,
+  .signup-actions .back-link{
+    text-align:center;
+  }
+
+  .radio-group{
+    flex-direction:column;
+  }
+}
+
+@media(max-width:420px){
+  .wordmark{font-size:clamp(24px,9.5vw,64px)}
+  #count{grid-template-columns:1fr}
+  .logo{width:min(120px,50vw)}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .wordmark{animation:none}
+}
+/* ================= SIGNUP PAGE ================= */
+#signup-page{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg,#fff3a0,#ffdf4d);
+}
+
+.signup-card{
+  background:#fff;
+  color:#111;
+  border:2px solid #111;
+  border-radius:24px;
+  padding:clamp(22px,4vw,34px);
+  box-shadow:var(--shadow);
+  max-width:760px;
+  margin:0 auto;
+}
+
+.signup-form{
+  text-align:left;
+}
+
+.form-group{
+  margin-bottom:22px;
+}
+
+.form-group label,
+.radio-title{
+  display:block;
+  font-weight:900;
+  margin-bottom:10px;
+  font-size:16px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"]{
+  width:100%;
+  padding:14px 16px;
+  border:2px solid #111;
+  border-radius:16px;
+  font-size:16px;
+  font-family:inherit;
+  background:#fffdf5;
+  transition:border-color .2s ease, box-shadow .2s ease, transform .15s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus{
+  outline:none;
+  border-color:var(--green);
+  box-shadow:0 0 0 4px rgba(15,166,75,.15);
+  transform:translateY(-1px);
+}
+
+.radio-group{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+
+.radio-option{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  background:#fffdf5;
+  border:2px solid #111;
+  border-radius:999px;
+  padding:10px 14px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.radio-option input{
+  accent-color:var(--green);
+}
+
+.signup-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  align-items:center;
+  justify-content:flex-start;
+  margin-top:10px;
+}
+
+.back-link{
+  font-weight:900;
+  text-decoration:underline;
+}
+
+.success-message{
+  text-align:center;
+  padding:10px 0;
+}
+
+.success-message .cta{
+  margin-top:10px;
+}
+
+@media(max-width:520px){
+  .signup-actions{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .signup-actions .cta,
+  .signup-actions .back-link{
+    text-align:center;
+  }
+
+  .radio-group{
+    flex-direction:column;
+  }
+}
+/* ================= SIGNUP PAGE ONLY ================= */
+
+#signup-page{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg,#fff3a0,#ffdf4d);
+}
+
+/* CARD */
+#signup-page .signup-card{
+  background:#fff;
+  color:#222;
+  border:none;
+  border-radius:24px;
+  padding:30px;
+  max-width:500px;
+  margin:auto;
+
+  box-shadow:
+    0 0 10px rgba(255,140,0,0.6),
+    0 0 25px rgba(255,140,0,0.5),
+    0 0 40px rgba(255,140,0,0.4);
+}
+
+/* FORM */
+#signup-page .signup-form{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  text-align:left;
+}
+
+/* LABELS */
+#signup-page .form-group label,
+#signup-page .radio-title{
+  font-weight:bold;
+  margin-bottom:5px;
+  display:block;
+  color:#918b8b;
+}
+
+/* INPUTS */
+#signup-page input[type="text"],
+#signup-page input[type="email"],
+#signup-page input[type="tel"]{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:12px;
+  background:#fffdf5;
+  color:#000000;
+
+  box-shadow:
+    0 0 5px rgba(255,140,0,0.4);
+
+  transition:all .2s ease;
+}
+
+/* INPUT FOCUS */
+#signup-page input:focus{
+  outline:none;
+  box-shadow:
+    0 0 10px rgba(255,140,0,0.8),
+    0 0 20px rgba(255,140,0,0.6);
+}
+
+/* RADIO GROUP */
+#signup-page .radio-group{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+/* RADIO BUTTON STYLE */
+#signup-page .radio-option{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:10px 14px;
+  border-radius:999px;
+  background:#fffdf5;
+  color:#918b8b;
+  font-weight:600;
+  cursor:pointer;
+
+  box-shadow:
+    0 0 6px rgba(255,140,0,0.4);
+}
+
+/* RADIO COLOR */
+#signup-page .radio-option input{
+  accent-color:orange;
+}
+
+/* BUTTON AREA */
+#signup-page .signup-actions{
+  display:flex;
+  align-items:center;
+  justify-content:space-between; /* THIS pushes them apart */
+  gap:10px;
+}
+
+/* BACK LINK */
+#signup-page .back-link{
+  color:#444;
+  font-weight:bold;
+}
+
+/* SUCCESS MESSAGE */
+#signup-page .success-message{
+  text-align:center;
+}
