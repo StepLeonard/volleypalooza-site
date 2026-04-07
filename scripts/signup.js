@@ -3,9 +3,12 @@ const successMessage = document.getElementById("successMessage");
 
 if (signupForm && successMessage) {
   signupForm.addEventListener("submit", function (event) {
-    event.preventDefault();
+    event.preventDefault(); // stops page reload
 
-    signupForm.hidden = true;
+    // hide form
+    signupForm.style.display = "none";
+
+    // show message
     successMessage.hidden = false;
   });
 }
